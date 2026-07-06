@@ -1,0 +1,11 @@
+language: rust
+fuzzing_engines:
+  - libfuzzer
+sanitizers:
+  - address
+fuzz_targets:
+  - nmea_fuzzer
+  - ais_fuzzer
+  - edifact_fuzzer
+  - feed_fuzzer
+  - tide_csv_fuzzer

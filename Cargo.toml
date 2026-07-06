@@ -1,0 +1,22 @@
+[package]
+name = "harborfeed"
+version = "0.1.0"
+edition = "2021"
+license = "UNLICENSED"
+publish = false
+
+[lib]
+name = "harborfeed"
+path = "src/lib.rs"
+
+[[bin]]
+name = "harborfeed"
+path = "src/bin/harborfeed.rs"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.release]
+debug = 1
+overflow-checks = true
+panic = "abort"

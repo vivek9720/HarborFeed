@@ -1,0 +1,54 @@
+[package]
+name = "harborfeed-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+harborfeed = { path = ".." }
+libfuzzer-sys = { path = "libfuzzer-sys" }
+
+[workspace]
+
+[profile.release]
+debug = 1
+overflow-checks = true
+panic = "abort"
+
+[[bin]]
+name = "nmea_fuzzer"
+path = "fuzz_targets/nmea_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "ais_fuzzer"
+path = "fuzz_targets/ais_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "edifact_fuzzer"
+path = "fuzz_targets/edifact_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "feed_fuzzer"
+path = "fuzz_targets/feed_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "tide_csv_fuzzer"
+path = "fuzz_targets/tide_csv_fuzzer.rs"
+test = false
+doc = false
+bench = false
